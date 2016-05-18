@@ -16,9 +16,8 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
 
+//connect database
 mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb://joedaouddotcom:westside0123@ds025772.mlab.com:25772/yelpcamp");
-
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -29,7 +28,7 @@ app.use(flash());
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-      secret: "Once again, Sammie wins cutests dog!",
+      secret: "Once again, Sammie wins cutest dog!",
       resave: false,
       saveUninitialized: false
 }));
